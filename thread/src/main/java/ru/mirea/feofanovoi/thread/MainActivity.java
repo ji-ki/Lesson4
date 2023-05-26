@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.Arrays;
@@ -23,5 +24,19 @@ public class MainActivity extends AppCompatActivity {
         infoTextView.append("\n Новое имя потока: " + mainThread.getName());
         Log.d(MainActivity.class.getSimpleName(), "Stack: " + Arrays.toString(mainThread.getStackTrace()));
     }
+    public void clickBtn(View view) {
+        long endTime = System.currentTimeMillis()+20*1000;
+
+        while (System.currentTimeMillis()<endTime){
+            synchronized (this){
+                try {
+                    wait(endTime-System.currentTimeMillis());
+                }catch (Exception e){
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+    }
+
 
 }
