@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         Thread mainThread = Thread.currentThread();
         infoTextView.setText("Имя текущего потока: " + mainThread.getName());
 // Меняем имя и выводим в текстовом поле
-        mainThread.setName("МОЙ НОМЕР ГРУППЫ: XX, НОМЕР ПО СПИСКУ: XX, МОЙ ЛЮБИИМЫЙ ФИЛЬМ: XX");
+        mainThread.setName("МОЙ НОМЕР ГРУППЫ: БСБО-07-21, НОМЕР ПО СПИСКУ: 25, МОЙ ЛЮБИИМЫЙ ФИЛЬМ: Drive");
         infoTextView.append("\n Новое имя потока: " + mainThread.getName());
         Log.d(MainActivity.class.getSimpleName(), "Stack: " + Arrays.toString(mainThread.getStackTrace()));
     }
